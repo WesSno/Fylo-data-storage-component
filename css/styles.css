@@ -47,7 +47,6 @@ main {
   background-color: hsl(228, 56%, 26%);
   border-radius: 10px 100px 10px 10px;
   width: 100%;
-  max-width: 300px;
 }
 
 .title-card .card-content {
@@ -95,7 +94,6 @@ main {
   border-radius: 10px;
   position: relative;
   width: 100%;
-  max-width: 500px;
 }
 
 .storage-card .card-content {
@@ -159,7 +157,7 @@ main {
   background-color: white;
   padding: 0.7rem;
   border-radius: 10px;
-  bottom: -30%;
+  bottom: -20%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -191,12 +189,16 @@ main {
     align-items: flex-end;
   }
 
-  .title-card .card-content {
-    padding: 2.5rem 2rem;
+  .title-card {
+    width: 300px;
+  }
+
+  .storage-card {
+    width: 500px;
   }
 
   .storage-card .card-content {
-    padding: 1.5rem 2rem 2rem 2rem;
+    padding: 1rem 2rem 1.5rem 2rem;
   }
 
   .storage-text {

@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ### Primary
+
+- Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%)
+
+### Neutral
+
+- Blue 200: hsl(243, 100%, 93%)
+- Grayish Blue: hsl(229, 7%, 55%)
+- Blue 850: hsl(228, 56%, 26%)
+- Blue 950: hsl(229, 57%, 11%) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  background: url("/images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+/************** TITLE CARD **************/
+
+.title-card {
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 10px 100px 10px 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.title-card .card-content {
+  display: grid;
+  gap: 20px;
+  padding: 2rem;
+}
+
+.logo {
+  width: 120px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(229, 57%, 11%);
+  border-radius: 10px;
+  padding: 1.4rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.folder-icon img,
+.document-icon img,
+.upload-icon img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+/************** STORAGE CARD ****************/
+.storage-card {
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.storage-card .card-content {
+  display: grid;
+  gap: 15px;
+  padding: 2rem 2rem 3rem 2rem;
+}
+
+.storage-text {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: hsl(243, 100%, 93%);
+  text-align: center;
+}
+
+.storage-text span {
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: hsl(229, 57%, 11%);
+  border-radius: 50px;
+  padding: 2px;
+}
+
+.progress-fill {
+  width: 81.5%;
+  height: 100%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 50px;
+  position: relative;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
+}
+
+.labels {
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(243, 100%, 93%);
+}
+
+.storage-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  background-color: white;
+  padding: 0.7rem;
+  border-radius: 10px;
+  bottom: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: hsl(229, 57%, 11%);
+}
+
+.unit {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: hsl(229, 7%, 55%);
+  letter-spacing: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    background: url("/images/bg-desktop.png");
+    background-color: hsl(229, 57%, 11%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom;
+  }
+
+  main {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .title-card .card-content {
+    padding: 2.5rem 2rem;
+  }
+
+  .storage-card .card-content {
+    padding: 1.5rem 2rem 2rem 2rem;
+  }
+
+  .storage-text {
+    text-align: left;
+  }
+
+  .storage-left {
+    bottom: 85%;
+    left: 79%;
+    width: 140px;
+  }
+
+  .storage-left::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-top: 25px solid white;
+  }
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

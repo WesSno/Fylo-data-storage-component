@@ -1,6 +1,6 @@
 # Frontend Mentor - Fylo data storage component solution
 
-This is a solution to the [Fylo data storage component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the [Fylo data storage component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,7 +15,6 @@ This is a solution to the [Fylo data storage component challenge on Frontend Men
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -29,18 +28,10 @@ Users should be able to:
 
 ![](./screenshot/fylo-data-storage-screenshot.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/WesSno/Fylo-data-storage-component)
+- Live Site URL: [Netlify](https://kbk-fylo-data-storage-component.netlify.app/)
 
 ## My process
 
@@ -49,73 +40,100 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- Creating custom progress bars using HTML and CSS.
 
-To see how you can add code snippets, see below:
+- see below:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="progress-bar">
+  <div class="progress-fill">
+    <span class="progress-dot"></span>
+  </div>
+</div>
 ```
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: hsl(229, 57%, 11%);
+  border-radius: 50px;
+  padding: 2px;
+}
+
+.progress-fill {
+  width: 81.5%;
+  height: 100%;
+  background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  border-radius: 50px;
+  position: relative;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  transform: translateY(-50%);
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+- Creating tooltip pointers using CSS pseudo-elements and borders.
+  - see below:
+
+```css
+.storage-left::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-top: 25px solid white;
+}
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+- Using gradients and border-radius properties to replicate modern UI designs.
+- Positioning elements with relative and absolute positioning.
+- Building reusable UI components with shared CSS classes.
+- Applying Flexbox for alignment and spacing.
+- Implementing responsive design adjustments using media queries.
+- Translating a design mockup into a functional web interface.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Convert the static progress bar into a dynamic component driven by data.
+- Add smooth width transition animations to the progress indicator.
+- Animate the progress dot as storage values change.
+- Fetch storage usage values from JavaScript instead of hardcoding them.
+- Improve accessibility by adding ARIA progress attributes.
+- Create reusable progress bar components for different storage plans.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Frontend Mentor](https://www.example.com) - provided me with the necessary resource to complete this project.
 
 ### AI Collaboration
 
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
+ChatGPT was used as a learning and problem-solving assistant throughout the development of this project. Rather than generating the entire solution, ChatGPT helped explain concepts, troubleshoot issues, and suggest implementation approaches that I then adapted and applied myself.
 
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
+Key areas where ChatGPT assisted include:
 
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- Understanding the structure and styling of a static progress bar.
+- Learning how to create a tooltip-style storage indicator with a CSS-generated arrow using pseudo-elements.
+- Troubleshooting inconsistent icon container sizing and improving component consistency.
+- Improving code organization through reusable CSS classes and cleaner HTML structure.
+- Providing feedback on project documentation and README content.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Kofi Baafi Kwatia](https://github.com/WesSno)
+- Frontend Mentor - [@WesSno](https://www.frontendmentor.io/profile/WesSno)
